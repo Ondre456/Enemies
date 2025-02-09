@@ -356,6 +356,9 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyPool.cs"
 "Assets/Scripts/EnemySpawner.cs"
+"Assets/Scripts/Goal.cs"
+"Assets/Scripts/Mover.cs"
+"Assets/Scripts/PathBuilder.cs"
 "Assets/Scripts/Repainter.cs"
 -langversion:9.0
 /deterministic
