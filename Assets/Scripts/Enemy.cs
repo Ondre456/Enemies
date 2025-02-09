@@ -3,47 +3,41 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Repainter))]
-[RequireComponent(typeof(DestructionTimer))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 10f;
+    [SerializeField] private float _moveSpeed = 15f;
 
-    private Vector3 _moveDirection;
-    private Rigidbody _body;
-    private DestructionTimer _destructionTimer;
+    private Rigidbody _rigidbody;
+    private Goal _goal;
 
     public event Action<Enemy> Deactivated;
 
     private void Awake()
     {
-        _body = GetComponent<Rigidbody>();
-        _destructionTimer = GetComponent<DestructionTimer>();
-        _destructionTimer.ActivateDestruction();
-    }
-
-    private void OnEnable()
-    {
-        _destructionTimer.TimeUntilDestructionExpired += Deactivate;
-    }
-
-    private void OnDisable()
-    {
-        _destructionTimer.TimeUntilDestructionExpired -= Deactivate;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        if (_moveDirection != Vector3.zero)
+        if (_goal != null)
         {
-            _body.MovePosition(_body.position + _moveDirection * _moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _goal.transform.position, _moveSpeed * Time.deltaTime);
         }
     }
 
-    public void AcceptDirection(Vector3 direction)
+    private void OnCollisionEnter(Collision collision)
     {
-        _moveDirection = direction.normalized;
+        if (collision.gameObject.TryGetComponent(out Goal goal))
+        {
+            if (goal == _goal)
+                Deactivate();
+        }
     }
 
+    public void AcceptGoal(Goal goal)
+    {
+        _goal = goal;
+    }
 
     private void Deactivate()
     {
