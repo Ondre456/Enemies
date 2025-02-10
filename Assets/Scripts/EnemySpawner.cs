@@ -26,9 +26,9 @@ public class EnemySpawner : MonoBehaviour
 
         while (enabled)
         {
-            Enemy newEnemy = _enemyPool.Get();
-            newEnemy.transform.position = _position;
-            newEnemy.AcceptGoal(_goal);
+            Enemy enemy = _enemyPool.Get();
+            enemy.transform.position = _position;
+            enemy.AcceptGoal(_goal);
 
             yield return waitForSeconds;
         }
