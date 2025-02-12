@@ -7,15 +7,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 15f;
 
-    private Rigidbody _rigidbody;
     private Goal _goal;
 
     public event Action<Enemy> Deactivated;
-
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void FixedUpdate()
     {
