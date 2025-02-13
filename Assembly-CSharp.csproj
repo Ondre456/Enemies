@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\EnemyPool.cs" />
     <Compile Include="Assets\Scripts\Repainter.cs" />
-    <Compile Include="Assets\Scripts\DestructionTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

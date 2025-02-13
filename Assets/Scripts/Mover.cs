@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 [RequireComponent(typeof(PathBuilder))]
 public class Mover : MonoBehaviour
@@ -26,15 +24,8 @@ public class Mover : MonoBehaviour
         const float WaypointAchievementCriterion = 0.2f;
 
         if (Mathf.Abs(transform.position.x - _nextPosition.x) < WaypointAchievementCriterion && Mathf.Abs(transform.position.z - _nextPosition.z) < WaypointAchievementCriterion)
-        {
-            _currentPointIndex++;
-
-            if (_currentPointIndex == _pathPoints.Count)
-                _currentPointIndex = 0;
-
-            _nextPosition = _pathPoints[_currentPointIndex];
-        }
-
+            _nextPosition = _pathPoints[++_currentPointIndex % _pathPoints.Count];
+        
         transform.position = Vector3.MoveTowards(transform.position, _nextPosition, _moveSpeed * Time.deltaTime);
     }
 }
