@@ -463,7 +463,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 560004898}
-  - component: {fileID: 560004897}
   - component: {fileID: 560004896}
   - component: {fileID: 560004895}
   m_Layer: 0
@@ -500,23 +499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495b4af85050ba44b9b54c0eacc93b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _repeatRate: 0.3
+  _repeatRate: 0.9
   _goal: {fileID: 58976241}
---- !u!114 &560004897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560004894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5307f3b7782d4ff4f9254eb4fde95ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
-  _maxPoolSize: 10
-  _poolCapacity: 5
 --- !u!4 &560004898
 Transform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1240,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139955740}
-  - component: {fileID: 2139955739}
   - component: {fileID: 2139955738}
   - component: {fileID: 2139955737}
   m_Layer: 0
@@ -1293,23 +1276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495b4af85050ba44b9b54c0eacc93b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _repeatRate: 0.3
+  _repeatRate: 1.3
   _goal: {fileID: 926645564}
---- !u!114 &2139955739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139955736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5307f3b7782d4ff4f9254eb4fde95ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
-  _maxPoolSize: 10
-  _poolCapacity: 5
 --- !u!4 &2139955740
 Transform:
   m_ObjectHideFlags: 0

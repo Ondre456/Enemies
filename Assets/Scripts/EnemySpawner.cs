@@ -20,9 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Work()
     {
-        const int Compensator = 1;
-
-        WaitForSeconds waitForSeconds = new WaitForSeconds(_repeatRate + Compensator);
+        WaitForSeconds waitForSeconds = new WaitForSeconds(_repeatRate);
 
         while (enabled)
         {
